@@ -3,15 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <title>Services — Awakening Insurance Agency LLC</title>
-<meta name="description" content="Personal Vehicle, Commercial Vehicle, Fleet and Truck Insurance. Get your free quote from Awakening Insurance Agency LLC today.">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<meta name="description" content="Personal Vehicle, Commercial Vehicle, Fleet and Truck Insurance. Get your free quote today.">
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
 :root{
   --navy:#1B2B4B;--navy-dk:#0F1C33;
   --amber:#C9922A;--amber-lt:#E8B54A;
-  --green:#2E7D32;
   --cream:#FAF7F2;--cream-dk:#F0EBE1;
   --white:#FFFFFF;--text:#2D3748;--muted:#718096;--border:#E2D9C8;
   --shadow:0 4px 24px rgba(27,43,75,.10);
@@ -29,8 +29,10 @@ section{scroll-margin-top:80px;}
 .btn-primary:hover{background:var(--amber-lt);transform:translateY(-2px);}
 .btn-outline{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:transparent;color:#fff;padding:13px 26px;border-radius:50px;font-family:"DM Sans",sans-serif;font-weight:600;font-size:.95rem;border:2px solid rgba(255,255,255,.5);cursor:pointer;transition:var(--tr);white-space:nowrap;text-decoration:none;}
 .btn-outline:hover{background:rgba(255,255,255,.12);border-color:#fff;}
-.btn-navy{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--navy);color:#fff;padding:14px 28px;border-radius:50px;font-family:"DM Sans",sans-serif;font-weight:600;font-size:.95rem;border:none;cursor:pointer;transition:var(--tr);box-shadow:0 4px 16px rgba(27,43,75,.3);text-decoration:none;}
+.btn-navy{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--navy);color:#fff;padding:14px 28px;border-radius:50px;font-family:"DM Sans",sans-serif;font-weight:600;font-size:.95rem;border:none;cursor:pointer;transition:var(--tr);text-decoration:none;}
 .btn-navy:hover{background:var(--navy-dk);transform:translateY(-2px);}
+.btn-submit{width:100%;display:flex;align-items:center;justify-content:center;gap:8px;background:var(--amber);color:#fff;padding:15px;border-radius:10px;font-family:"DM Sans",sans-serif;font-weight:600;font-size:.95rem;border:none;cursor:pointer;transition:var(--tr);box-shadow:0 4px 16px rgba(201,146,42,.4);}
+.btn-submit:hover{background:var(--amber-lt);transform:translateY(-1px);}
 .tag{display:inline-block;font-size:.75rem;font-weight:600;letter-spacing:1.8px;text-transform:uppercase;color:var(--amber);background:rgba(201,146,42,.1);padding:5px 14px;border-radius:50px;margin-bottom:14px;}
 .section-title{font-size:clamp(1.8rem,4vw,2.7rem);color:var(--navy);margin-bottom:14px;}
 .section-sub{font-size:1rem;color:var(--muted);max-width:580px;line-height:1.8;}
@@ -53,8 +55,9 @@ section{scroll-margin-top:80px;}
 .nav-links{display:flex;align-items:center;gap:28px;list-style:none;}
 .nav-links a{color:rgba(255,255,255,.82);font-size:.9rem;font-weight:500;transition:var(--tr);position:relative;padding-bottom:2px;}
 .nav-links a::after{content:"";position:absolute;bottom:-4px;left:0;right:0;height:2px;background:var(--amber);transform:scaleX(0);transition:var(--tr);}
-.nav-links a:hover,.nav-links a.active{color:#fff;}
+.nav-links a:hover{color:#fff;}
 .nav-links a:hover::after,.nav-links a.active::after{transform:scaleX(1);}
+.nav-links a.active{color:var(--amber-lt);}
 .nav-right{display:flex;align-items:center;gap:14px;}
 .nav-phone{color:rgba(255,255,255,.75);font-size:.82rem;font-weight:500;}
 .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;background:none;border:none;}
@@ -79,6 +82,18 @@ section{scroll-margin-top:80px;}
 .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center;}
 .sbn{font-family:"Playfair Display",serif;font-size:clamp(2rem,4vw,2.8rem);color:var(--amber-lt);font-weight:700;}
 .sbl{font-size:.78rem;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:1px;margin-top:6px;}
+/* FORMS */
+.fcard{background:#fff;border-radius:22px;padding:34px 30px;box-shadow:var(--shadow-lg);border:1px solid var(--border);}
+.fcard h3{font-size:1.3rem;color:var(--navy);margin-bottom:5px;}
+.fcard .sub{font-size:.82rem;color:var(--muted);margin-bottom:22px;}
+.fg{display:grid;grid-template-columns:1fr 1fr;gap:13px;}
+.field{display:flex;flex-direction:column;gap:5px;}
+.field.full{grid-column:1/-1;}
+.field label{font-size:.76rem;font-weight:600;color:var(--navy);letter-spacing:.3px;}
+.field input,.field select,.field textarea{padding:11px 13px;border:1.5px solid var(--border);border-radius:9px;font-family:"DM Sans",sans-serif;font-size:.87rem;color:var(--text);background:var(--cream);outline:none;transition:var(--tr);}
+.field textarea{resize:vertical;min-height:82px;}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--amber);background:#fff;box-shadow:0 0 0 3px rgba(201,146,42,.1);}
+.fnote{text-align:center;font-size:.72rem;color:var(--muted);margin-top:9px;}
 /* FOOTER */
 footer{background:var(--navy-dk);padding:68px 0 0;}
 .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:44px;padding-bottom:52px;}
@@ -108,44 +123,28 @@ footer{background:var(--navy-dk);padding:68px 0 0;}
 .fbtn.wa:hover{background:#20c05a;transform:translateX(-4px);}
 .fbtn.call{background:var(--amber);color:#fff;}
 .fbtn.call:hover{background:var(--amber-lt);transform:translateX(-4px);}
-#toast{position:fixed;bottom:26px;left:50%;transform:translateX(-50%) translateY(100px);background:var(--navy);color:#fff;padding:13px 24px;border-radius:50px;font-weight:600;font-size:.86rem;z-index:9999;transition:.4s cubic-bezier(.4,0,.2,1);opacity:0;box-shadow:0 8px 32px rgba(27,43,75,.4);display:flex;align-items:center;gap:8px;white-space:nowrap;}
-/* FORM STYLES */
-.fcard{background:#fff;border-radius:22px;padding:34px 30px;box-shadow:var(--shadow-lg);border:1px solid var(--border);}
-.fcard h3{font-size:1.3rem;color:var(--navy);margin-bottom:5px;}
-.fcard .sub{font-size:.82rem;color:var(--muted);margin-bottom:22px;}
-.fg{display:grid;grid-template-columns:1fr 1fr;gap:13px;}
-.field{display:flex;flex-direction:column;gap:5px;}
-.field.full{grid-column:1/-1;}
-.field label{font-size:.76rem;font-weight:600;color:var(--navy);letter-spacing:.3px;}
-.field input,.field select,.field textarea{padding:11px 13px;border:1.5px solid var(--border);border-radius:9px;font-family:"DM Sans",sans-serif;font-size:.87rem;color:var(--text);background:var(--cream);outline:none;transition:var(--tr);}
-.field textarea{resize:vertical;min-height:82px;}
-.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--amber);background:#fff;box-shadow:0 0 0 3px rgba(201,146,42,.1);}
 /* PAGE HERO */
 .page-hero{background:linear-gradient(145deg,var(--navy-dk) 0%,var(--navy) 60%,#1A3060 100%);padding:140px 0 80px;position:relative;overflow:hidden;text-align:center;}
 .page-hero::before{content:"";position:absolute;inset:0;opacity:.035;background-image:linear-gradient(rgba(255,255,255,1) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,1) 1px,transparent 1px);background-size:64px 64px;}
 .page-hero-inner{position:relative;z-index:1;}
 .page-hero h1{font-size:clamp(2.2rem,5vw,3.5rem);color:#fff;margin-bottom:16px;}
-.page-hero p{color:rgba(255,255,255,.7);font-size:1.05rem;max-width:600px;margin:0 auto 28px;line-height:1.8;}
-/* RATING STARS */
-.rating-display{display:flex;align-items:center;gap:8px;}
-.rating-stars{color:#FFB800;font-size:1.2rem;letter-spacing:2px;}
-.rating-num{font-family:"Playfair Display",serif;font-size:1.6rem;font-weight:700;color:var(--navy);}
-.rating-count{color:var(--muted);font-size:.88rem;}
-/* TESTIMONIAL CARDS */
+.page-hero p{color:rgba(255,255,255,.7);font-size:1.05rem;max-width:600px;margin:0 auto;line-height:1.8;}
+/* TESTIMONIALS */
 .tcard{background:#fff;border:1px solid var(--border);border-radius:20px;padding:28px 24px;transition:var(--tr);position:relative;}
 .tcard:hover{box-shadow:var(--shadow-lg);border-color:transparent;}
-.tcard::before{content:"\201C";position:absolute;top:12px;right:20px;font-family:"Playfair Display",serif;font-size:4.5rem;color:rgba(201,146,42,.1);line-height:1;}
+.tcard::before{content:"C";position:absolute;top:12px;right:20px;font-family:"Playfair Display",serif;font-size:4.5rem;color:rgba(201,146,42,.1);line-height:1;}
 .stars{color:#FFB800;letter-spacing:2px;margin-bottom:11px;font-size:.92rem;}
 .ttext{font-size:.87rem;color:var(--muted);line-height:1.78;margin-bottom:20px;font-style:italic;}
 .tauthor{display:flex;align-items:center;gap:10px;}
 .tav{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--navy),var(--amber));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:.9rem;flex-shrink:0;}
 .tname{font-weight:600;color:var(--navy);font-size:.88rem;}
 .trole{font-size:.74rem;color:var(--muted);}
+/* FORMSPREE SUCCESS */
+.fs-success{display:none;background:linear-gradient(135deg,#2E7D32,#43A047);color:#fff;border-radius:12px;padding:24px;text-align:center;margin-top:16px;}
+.fs-success h4{font-family:"Playfair Display",serif;font-size:1.2rem;margin-bottom:8px;}
+.fs-success p{font-size:.88rem;opacity:.9;}
 /* RESPONSIVE */
-@media(max-width:1024px){
-  .footer-grid{grid-template-columns:1fr 1fr;gap:32px;}
-  .stats-grid{grid-template-columns:repeat(2,1fr);}
-}
+@media(max-width:1024px){.footer-grid{grid-template-columns:1fr 1fr;gap:32px;}.stats-grid{grid-template-columns:repeat(2,1fr);}}
 @media(max-width:768px){
   .nav-links,.nav-right{display:none;}
   .hamburger{display:flex;}
@@ -159,134 +158,50 @@ footer{background:var(--navy-dk);padding:68px 0 0;}
   .trust-inner{justify-content:center;}
   .floating-wrap{bottom:12px;right:10px;}
   .fbtn .flabel{display:none;}
-  .fbtn{padding:12px;border-radius:50%;width:48px;height:48px;justify-content:center;}
+  .fbtn{padding:13px;border-radius:50%;width:48px;height:48px;justify-content:center;}
   .fg{grid-template-columns:1fr;}
   .fcard{padding:24px 18px;}
   .stats-grid{grid-template-columns:1fr 1fr;}
 }
-@media(max-width:480px){
-  .stats-grid{grid-template-columns:1fr 1fr;}
-}
+@media(max-width:480px){.stats-grid{grid-template-columns:1fr 1fr;}}
 </style>
 <style>
-/* PAGE HERO */
-.page-hero{
-  background:linear-gradient(145deg,var(--navy-dk) 0%,var(--navy) 60%,#1A3060 100%);
-  padding:140px 0 80px;position:relative;overflow:hidden;text-align:center;
-}
-.page-hero::before{
-  content:"";position:absolute;inset:0;opacity:.035;
-  background-image:linear-gradient(rgba(255,255,255,1) 1px,transparent 1px),
-                   linear-gradient(90deg,rgba(255,255,255,1) 1px,transparent 1px);
-  background-size:64px 64px;
-}
-.page-hero-inner{position:relative;z-index:1;}
-.page-hero h1{font-size:clamp(2.2rem,5vw,3.5rem);color:#fff;margin-bottom:16px;}
-.page-hero p{color:rgba(255,255,255,.7);font-size:1.05rem;max-width:600px;margin:0 auto;line-height:1.8;}
-
-/* SERVICE SECTION — simple clean layout, no direction tricks */
 .svc-sec{padding:80px 0;}
 .svc-sec.bg-alt{background:var(--cream-dk);}
 .svc-sec.bg-white{background:#fff;}
 .svc-sec.bg-cream{background:var(--cream);}
-
-.svc-row{
-  display:grid;grid-template-columns:1fr 1fr;
-  gap:60px;align-items:center;
-}
-/* Normal: visual left, content right */
-.svc-row .svc-visual{order:1;}
-.svc-row .svc-content{order:2;}
-/* Flipped: content left, visual right */
-.svc-row.flip .svc-visual{order:2;}
-.svc-row.flip .svc-content{order:1;}
-
-.svc-visual{
-  background:linear-gradient(135deg,var(--navy),var(--navy-dk));
-  border-radius:24px;padding:48px 36px;
-  display:flex;flex-direction:column;align-items:center;
-  justify-content:center;text-align:center;min-height:380px;
-  position:relative;overflow:hidden;
-}
-.svc-visual::before{
-  content:"";position:absolute;top:-40%;right:-40%;
-  width:80%;height:80%;border-radius:50%;
-  background:radial-gradient(rgba(201,146,42,.15),transparent 70%);
-}
+.svc-row{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+.svc-visual{background:linear-gradient(135deg,var(--navy),var(--navy-dk));border-radius:24px;padding:48px 36px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;min-height:380px;position:relative;overflow:hidden;}
+.svc-visual::before{content:"";position:absolute;top:-40%;right:-40%;width:80%;height:80%;border-radius:50%;background:radial-gradient(rgba(201,146,42,.15),transparent 70%);}
 .svc-visual-icon{font-size:5rem;margin-bottom:20px;position:relative;z-index:1;}
-.svc-visual h3{
-  font-family:"Playfair Display",serif;color:#fff;
-  font-size:1.5rem;margin-bottom:10px;position:relative;z-index:1;
-}
-.svc-visual p{
-  color:rgba(255,255,255,.6);font-size:.88rem;
-  line-height:1.7;position:relative;z-index:1;
-}
-.svc-badge{
-  display:inline-block;background:var(--amber);color:#fff;
-  padding:6px 18px;border-radius:50px;font-size:.75rem;
-  font-weight:600;letter-spacing:1px;margin-top:16px;
-  position:relative;z-index:1;
-}
-
-.svc-content .tag{margin-bottom:12px;}
-.coverage-list{
-  list-style:none;display:flex;flex-direction:column;
-  gap:11px;margin:20px 0 24px;
-}
-.coverage-list li{
-  display:flex;align-items:flex-start;gap:10px;
-  font-size:.9rem;color:var(--text);line-height:1.6;
-}
-.coverage-list li .check{
-  width:22px;height:22px;background:rgba(201,146,42,.15);
-  color:var(--amber);border-radius:6px;display:flex;
-  align-items:center;justify-content:center;
-  font-size:.82rem;flex-shrink:0;margin-top:1px;font-weight:700;
-}
-.hcards{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:20px 0 28px;}
+.svc-visual h3{font-family:"Playfair Display",serif;color:#fff;font-size:1.5rem;margin-bottom:10px;position:relative;z-index:1;}
+.svc-visual p{color:rgba(255,255,255,.6);font-size:.88rem;line-height:1.7;position:relative;z-index:1;}
+.svc-badge{display:inline-block;background:var(--amber);color:#fff;padding:6px 18px;border-radius:50px;font-size:.75rem;font-weight:600;letter-spacing:1px;margin-top:16px;position:relative;z-index:1;}
+.coverage-list{list-style:none;display:flex;flex-direction:column;gap:11px;margin:20px 0 24px;}
+.coverage-list li{display:flex;align-items:flex-start;gap:10px;font-size:.9rem;color:var(--text);line-height:1.6;}
+.check-box{width:22px;height:22px;background:rgba(201,146,42,.15);color:var(--amber);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:.82rem;flex-shrink:0;margin-top:1px;font-weight:700;}
+.hcards{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:20px 0 24px;}
 .hcard{background:#fff;border:1px solid var(--border);border-radius:12px;padding:16px;}
 .hcard h4{font-family:"DM Sans",sans-serif;font-weight:600;color:var(--navy);font-size:.88rem;margin-bottom:4px;}
 .hcard p{font-size:.78rem;color:var(--muted);}
-.svc-btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px;}
-
-/* QUOTE SECTION */
-#quote{padding:88px 0;background:linear-gradient(135deg,#F5EFE6 0%,var(--cream-dk) 100%);}
+.svc-btns{display:flex;gap:12px;flex-wrap:wrap;}
 .quote-inner{display:grid;grid-template-columns:1fr 1.1fr;gap:60px;align-items:start;}
 .qperks{display:flex;flex-direction:column;gap:16px;margin-top:26px;}
 .perk{display:flex;gap:12px;align-items:center;}
-.perk-ico{
-  width:40px;height:40px;background:rgba(201,146,42,.12);
-  border-radius:10px;display:flex;align-items:center;
-  justify-content:center;font-size:1.1rem;flex-shrink:0;
-}
+.perk-ico{width:40px;height:40px;background:rgba(201,146,42,.12);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;}
 .perk h4{font-family:"DM Sans",sans-serif;font-weight:600;font-size:.9rem;color:var(--navy);}
 .perk p{font-size:.8rem;color:var(--muted);}
-.fnote{text-align:center;font-size:.72rem;color:var(--muted);margin-top:9px;}
-
-/* RESPONSIVE */
 @media(max-width:900px){
-  .svc-row,
-  .svc-row.flip{
-    grid-template-columns:1fr;gap:32px;
-  }
-  .svc-row .svc-visual,
-  .svc-row .svc-content,
-  .svc-row.flip .svc-visual,
-  .svc-row.flip .svc-content{
-    order:unset;
-  }
+  .svc-row{grid-template-columns:1fr;gap:32px;}
   .svc-visual{min-height:240px;padding:32px 24px;}
   .hcards{grid-template-columns:1fr;}
   .quote-inner{grid-template-columns:1fr;gap:36px;}
 }
-@media(max-width:480px){
-  .svc-btns{flex-direction:column;}
-  .svc-btns a{width:100%;text-align:center;}
-}
+@media(max-width:480px){.svc-btns{flex-direction:column;}.svc-btns a{width:100%;text-align:center;}}
 </style>
 </head>
 <body>
+<div id="scrollProgress"></div>
 <nav class="navbar" id="navbar">
   <div class="nav-inner">
     <a href="index.html" class="nav-logo">
@@ -304,65 +219,44 @@ footer{background:var(--navy-dk);padding:68px 0 0;}
       <li><a href="contact.html">Contact</a></li>
     </ul>
     <div class="nav-right">
-      <a href="tel:+18477499276" class="nav-phone">&#128222; +1 (847) 749-9276</a>
+      <a href="tel:+12243660344" class="nav-phone">&#128222; +1 (224) 366-0344 ext. 800</a>
       <a href="services.html#quote" class="btn-primary" style="padding:9px 20px;font-size:.84rem;">Get a Quote</a>
     </div>
-    <button class="hamburger" id="hamburger" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
+    <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
-  <a href="index.html" onclick="closeMenu()">Home</a>
-  <div class="mob-div"></div>
-  <a href="services.html" onclick="closeMenu()">Services</a>
-  <div class="mob-div"></div>
-  <a href="about.html" onclick="closeMenu()">About Us</a>
-  <div class="mob-div"></div>
-  <a href="reviews.html" onclick="closeMenu()">Reviews</a>
-  <div class="mob-div"></div>
+  <a href="index.html" onclick="closeMenu()">Home</a><div class="mob-div"></div>
+  <a href="services.html" onclick="closeMenu()">Services</a><div class="mob-div"></div>
+  <a href="about.html" onclick="closeMenu()">About Us</a><div class="mob-div"></div>
+  <a href="reviews.html" onclick="closeMenu()">Reviews</a><div class="mob-div"></div>
   <a href="contact.html" onclick="closeMenu()">Contact</a>
-  <a href="tel:+18477499276" class="mob-tel">&#128222; +1 (847) 749-9276</a>
-  <a href="services.html#quote" class="mob-cta">&#128640; Get Free Quote</a>
+  <a href="tel:+12243660344" class="mob-tel" onclick="closeMenu()">&#128222; +1 (224) 366-0344 ext. 800</a>
+  <a href="services.html#quote" class="mob-cta" onclick="closeMenu()">&#128640; Get Free Quote</a>
 </div>
 
-<!-- PAGE HERO -->
-<div class="page-hero">
-  <div class="container page-hero-inner">
-    <div class="tag" style="background:rgba(201,146,42,.2);color:var(--amber-lt);">What We Cover</div>
-    <h1>Personal, Commercial &amp; Fleet Insurance</h1>
-    <p>Comprehensive vehicle insurance solutions for individuals, businesses and fleet operators across the nation. Competitive rates, fast claims and expert guidance.</p>
-  </div>
-</div>
+<div class="page-hero"><div class="container page-hero-inner">
+  <div class="tag" style="background:rgba(201,146,42,.2);color:var(--amber-lt);">What We Cover</div>
+  <h1>Personal, Commercial &amp; Fleet Insurance</h1>
+  <p>Comprehensive vehicle insurance solutions for individuals, businesses and fleet operators across the nation.</p>
+</div></div>
 
-<!-- PERSONAL VEHICLE -->
 <section class="svc-sec bg-cream" id="personal">
   <div class="container">
     <div class="svc-row">
-      <div class="svc-visual reveal">
+      <div class="svc-visual reveal" style="order:1;">
         <div class="svc-visual-icon">&#128663;</div>
         <h3>Personal Vehicle Insurance</h3>
-        <p>Complete protection for your car, truck or SUV &mdash; tailored to your lifestyle and budget.</p>
+        <p>Complete protection for your car, truck or SUV tailored to your lifestyle and budget.</p>
         <span class="svc-badge">From $89/month</span>
       </div>
-      <div class="svc-content reveal">
-        <div class="tag">Personal Coverage</div>
+      <div class="svc-content reveal" style="order:2;">
+        <div class="tag">Personal Vehicle Insurance</div>
         <h2 class="section-title">Personal Vehicle Insurance</h2>
         <div class="divider"></div>
-        <p class="section-sub">Whether you drive a sedan, SUV, pickup or sports car &mdash; our personal auto policies offer complete protection at rates you can afford. We compare dozens of top carriers to find you the best deal.</p>
-        <ul class="coverage-list">
-          <li><span class="check">&#10003;</span>Liability Coverage &mdash; protects you when you are at fault in an accident</li>
-          <li><span class="check">&#10003;</span>Collision Coverage &mdash; repairs your vehicle after any accident regardless of fault</li>
-          <li><span class="check">&#10003;</span>Comprehensive Coverage &mdash; covers theft, weather damage, fire and vandalism</li>
-          <li><span class="check">&#10003;</span>Uninsured &amp; Underinsured Motorist Protection</li>
-          <li><span class="check">&#10003;</span>Medical Payments &amp; Personal Injury Protection (PIP)</li>
-          <li><span class="check">&#10003;</span>Roadside Assistance &amp; Rental Car Reimbursement</li>
-          <li><span class="check">&#10003;</span>Accident Forgiveness &amp; Safe Driver Discounts</li>
-        </ul>
-        <div class="hcards">
-          <div class="hcard"><h4>Multi-Vehicle Discount</h4><p>Save up to 25% when you insure more than one vehicle</p></div>
-          <div class="hcard"><h4>Safe Driver Savings</h4><p>Clean record? Save up to 30% on your premium</p></div>
-        </div>
+        <p class="section-sub">Complete protection for your car, truck or SUV tailored to your lifestyle and budget.</p>
+        <ul class="coverage-list"><li><span class="check-box">&#10003;</span>Liability Coverage &mdash; protects you when you are at fault</li><li><span class="check-box">&#10003;</span>Collision Coverage &mdash; repairs your vehicle after any accident</li><li><span class="check-box">&#10003;</span>Comprehensive Coverage &mdash; covers theft, weather damage, fire and vandalism</li><li><span class="check-box">&#10003;</span>Uninsured &amp; Underinsured Motorist Protection</li><li><span class="check-box">&#10003;</span>Medical Payments &amp; Personal Injury Protection (PIP)</li><li><span class="check-box">&#10003;</span>Roadside Assistance &amp; Rental Car Reimbursement</li><li><span class="check-box">&#10003;</span>Accident Forgiveness &amp; Safe Driver Discounts</li></ul>
+        <div class="hcards"><div class="hcard"><h4>Multi-Vehicle Discount</h4><p>Save up to 25% when you insure more than one vehicle</p></div><div class="hcard"><h4>Safe Driver Savings</h4><p>Clean record? Save up to 30% on your premium</p></div></div>
         <div class="svc-btns">
           <a href="#quote" class="btn-primary">Get a Free Quote</a>
           <a href="contact.html" class="btn-navy">Talk to an Advisor</a>
@@ -372,34 +266,22 @@ footer{background:var(--navy-dk);padding:68px 0 0;}
   </div>
 </section>
 
-<!-- COMMERCIAL VEHICLE -->
 <section class="svc-sec bg-alt" id="commercial">
   <div class="container">
-    <div class="svc-row flip">
-      <div class="svc-visual reveal">
+    <div class="svc-row">
+      <div class="svc-visual reveal" style="order:2;">
         <div class="svc-visual-icon">&#128650;</div>
         <h3>Commercial Vehicle Insurance</h3>
         <p>Business-grade protection for all your company vehicles and drivers.</p>
         <span class="svc-badge">Custom Business Rates</span>
       </div>
-      <div class="svc-content reveal">
-        <div class="tag">Commercial Coverage</div>
+      <div class="svc-content reveal" style="order:1;">
+        <div class="tag">Commercial Vehicle Insurance</div>
         <h2 class="section-title">Commercial Vehicle Insurance</h2>
         <div class="divider"></div>
-        <p class="section-sub">Protect your business vehicles, employees and cargo with commercial auto insurance designed for companies that rely on their vehicles every day. From one work van to an entire delivery fleet.</p>
-        <ul class="coverage-list">
-          <li><span class="check">&#10003;</span>Commercial Auto Liability &mdash; covers bodily injury and property damage</li>
-          <li><span class="check">&#10003;</span>Physical Damage Coverage &mdash; collision and comprehensive for business vehicles</li>
-          <li><span class="check">&#10003;</span>Hired and Non-Owned Auto Coverage</li>
-          <li><span class="check">&#10003;</span>Cargo &amp; Goods in Transit Insurance</li>
-          <li><span class="check">&#10003;</span>Workers Compensation Integration</li>
-          <li><span class="check">&#10003;</span>Multiple Driver Scheduling &amp; Management</li>
-          <li><span class="check">&#10003;</span>DOT Compliance &amp; Filing Assistance</li>
-        </ul>
-        <div class="hcards">
-          <div class="hcard"><h4>Same Day Coverage</h4><p>Get covered today &mdash; certificates issued within hours</p></div>
-          <div class="hcard"><h4>All Vehicle Types</h4><p>Vans, pickups, box trucks, trailers and specialty vehicles</p></div>
-        </div>
+        <p class="section-sub">Business-grade protection for all your company vehicles and drivers.</p>
+        <ul class="coverage-list"><li><span class="check-box">&#10003;</span>Commercial Auto Liability &mdash; covers bodily injury and property damage</li><li><span class="check-box">&#10003;</span>Physical Damage Coverage &mdash; collision and comprehensive for business vehicles</li><li><span class="check-box">&#10003;</span>Hired and Non-Owned Auto Coverage</li><li><span class="check-box">&#10003;</span>Cargo &amp; Goods in Transit Insurance</li><li><span class="check-box">&#10003;</span>Workers Compensation Integration</li><li><span class="check-box">&#10003;</span>Multiple Driver Scheduling &amp; Management</li><li><span class="check-box">&#10003;</span>DOT Compliance &amp; Filing Assistance</li></ul>
+        <div class="hcards"><div class="hcard"><h4>Same Day Coverage</h4><p>Get covered today &mdash; certificates issued within hours</p></div><div class="hcard"><h4>All Vehicle Types</h4><p>Vans, pickups, box trucks, trailers and specialty vehicles</p></div></div>
         <div class="svc-btns">
           <a href="#quote" class="btn-primary">Get a Free Quote</a>
           <a href="contact.html" class="btn-navy">Talk to an Advisor</a>
@@ -409,36 +291,24 @@ footer{background:var(--navy-dk);padding:68px 0 0;}
   </div>
 </section>
 
-<!-- FLEET -->
 <section class="svc-sec bg-cream" id="fleet">
   <div class="container">
     <div class="svc-row">
-      <div class="svc-visual reveal">
+      <div class="svc-visual reveal" style="order:1;">
         <div class="svc-visual-icon">&#128652;</div>
         <h3>Fleet Insurance</h3>
-        <p>One powerful policy protecting all your vehicles under one roof.</p>
+        <p>One powerful policy protecting all your vehicles under one roof for 5 to 500+ vehicles.</p>
         <span class="svc-badge">5 to 500+ Vehicles</span>
       </div>
-      <div class="svc-content reveal">
-        <div class="tag">Fleet Coverage</div>
+      <div class="svc-content reveal" style="order:2;">
+        <div class="tag">Fleet Insurance</div>
         <h2 class="section-title">Fleet Insurance</h2>
         <div class="divider"></div>
-        <p class="section-sub">Managing a fleet is complex enough &mdash; your insurance should not be. Our fleet programs simplify coverage for 5 to 500+ vehicles under one policy with significant multi-vehicle savings and dedicated fleet management support.</p>
-        <ul class="coverage-list">
-          <li><span class="check">&#10003;</span>Single Policy for All Fleet Vehicles &mdash; cars, vans, trucks and trailers</li>
-          <li><span class="check">&#10003;</span>Flexible Coverage Options Per Vehicle Type</li>
-          <li><span class="check">&#10003;</span>Driver Risk Management &amp; Monitoring Tools</li>
-          <li><span class="check">&#10003;</span>Significant Multi-Vehicle Premium Discounts</li>
-          <li><span class="check">&#10003;</span>Blanket Coverage for New Vehicle Additions</li>
-          <li><span class="check">&#10003;</span>24/7 Dedicated Fleet Claims Support Line</li>
-          <li><span class="check">&#10003;</span>Annual Fleet Review &amp; Policy Optimization</li>
-        </ul>
-        <div class="hcards">
-          <div class="hcard"><h4>Volume Discounts</h4><p>The more vehicles you insure, the more you save</p></div>
-          <div class="hcard"><h4>Dedicated Manager</h4><p>A dedicated fleet account manager assigned to you</p></div>
-        </div>
+        <p class="section-sub">One powerful policy protecting all your vehicles under one roof for 5 to 500+ vehicles.</p>
+        <ul class="coverage-list"><li><span class="check-box">&#10003;</span>Single Policy for All Fleet Vehicles &mdash; cars, vans, trucks and trailers</li><li><span class="check-box">&#10003;</span>Flexible Coverage Options Per Vehicle Type</li><li><span class="check-box">&#10003;</span>Driver Risk Management &amp; Monitoring Tools</li><li><span class="check-box">&#10003;</span>Significant Multi-Vehicle Premium Discounts</li><li><span class="check-box">&#10003;</span>Blanket Coverage for New Vehicle Additions</li><li><span class="check-box">&#10003;</span>24/7 Dedicated Fleet Claims Support Line</li><li><span class="check-box">&#10003;</span>Annual Fleet Review &amp; Policy Optimization</li></ul>
+        <div class="hcards"><div class="hcard"><h4>Volume Discounts</h4><p>The more vehicles you insure, the more you save</p></div><div class="hcard"><h4>Dedicated Manager</h4><p>A dedicated fleet account manager assigned to you</p></div></div>
         <div class="svc-btns">
-          <a href="#quote" class="btn-primary">Get a Fleet Quote</a>
+          <a href="#quote" class="btn-primary">Get a Free Quote</a>
           <a href="contact.html" class="btn-navy">Talk to an Advisor</a>
         </div>
       </div>
@@ -446,36 +316,24 @@ footer{background:var(--navy-dk);padding:68px 0 0;}
   </div>
 </section>
 
-<!-- TRUCK -->
 <section class="svc-sec bg-alt" id="truck">
   <div class="container">
-    <div class="svc-row flip">
-      <div class="svc-visual reveal">
+    <div class="svc-row">
+      <div class="svc-visual reveal" style="order:2;">
         <div class="svc-visual-icon">&#128667;</div>
         <h3>Truck Insurance</h3>
         <p>Specialized coverage for owner-operators and trucking companies nationwide.</p>
         <span class="svc-badge">DOT Compliant</span>
       </div>
-      <div class="svc-content reveal">
-        <div class="tag">Truck Coverage</div>
+      <div class="svc-content reveal" style="order:1;">
+        <div class="tag">Truck Insurance</div>
         <h2 class="section-title">Truck Insurance</h2>
         <div class="divider"></div>
-        <p class="section-sub">Built specifically for truckers, owner-operators and trucking companies. We understand the unique risks of the road and deliver policies that keep you compliant, protected and moving forward.</p>
-        <ul class="coverage-list">
-          <li><span class="check">&#10003;</span>Primary Liability &mdash; federally required for all interstate commerce</li>
-          <li><span class="check">&#10003;</span>Physical Damage &mdash; collision and comprehensive for your truck and trailer</li>
-          <li><span class="check">&#10003;</span>Motor Truck Cargo &mdash; protects the freight you haul</li>
-          <li><span class="check">&#10003;</span>Bobtail &amp; Non-Trucking Liability Coverage</li>
-          <li><span class="check">&#10003;</span>General Liability for Trucking Operations</li>
-          <li><span class="check">&#10003;</span>Full DOT &amp; FMCSA Compliance Filing (Form MCS-90)</li>
-          <li><span class="check">&#10003;</span>Occupational Accident Coverage for Owner-Operators</li>
-        </ul>
-        <div class="hcards">
-          <div class="hcard"><h4>Owner-Operators</h4><p>Specialized policies for single-truck operators</p></div>
-          <div class="hcard"><h4>Trucking Companies</h4><p>Full fleet coverage with DOT compliance support</p></div>
-        </div>
+        <p class="section-sub">Specialized coverage for owner-operators and trucking companies nationwide.</p>
+        <ul class="coverage-list"><li><span class="check-box">&#10003;</span>Primary Liability &mdash; federally required for all interstate commerce</li><li><span class="check-box">&#10003;</span>Physical Damage &mdash; collision and comprehensive for your truck and trailer</li><li><span class="check-box">&#10003;</span>Motor Truck Cargo &mdash; protects the freight you haul</li><li><span class="check-box">&#10003;</span>Bobtail &amp; Non-Trucking Liability Coverage</li><li><span class="check-box">&#10003;</span>General Liability for Trucking Operations</li><li><span class="check-box">&#10003;</span>Full DOT &amp; FMCSA Compliance Filing (Form MCS-90)</li><li><span class="check-box">&#10003;</span>Occupational Accident Coverage for Owner-Operators</li></ul>
+        <div class="hcards"><div class="hcard"><h4>Owner-Operators</h4><p>Specialized policies for single-truck operators</p></div><div class="hcard"><h4>Trucking Companies</h4><p>Full fleet coverage with DOT compliance support</p></div></div>
         <div class="svc-btns">
-          <a href="#quote" class="btn-primary">Get a Truck Quote</a>
+          <a href="#quote" class="btn-primary">Get a Free Quote</a>
           <a href="contact.html" class="btn-navy">Talk to an Advisor</a>
         </div>
       </div>
@@ -483,88 +341,67 @@ footer{background:var(--navy-dk);padding:68px 0 0;}
   </div>
 </section>
 
-<!-- QUOTE FORM -->
-<section id="quote">
+<section id="quote" style="padding:88px 0;background:linear-gradient(135deg,#F5EFE6 0%,var(--cream-dk) 100%);">
   <div class="container">
     <div class="quote-inner">
       <div class="reveal">
         <div class="tag">Free Quote</div>
         <h2 class="section-title">Get Your Personalized Quote in Minutes</h2>
         <div class="divider"></div>
-        <p class="section-sub">No commitment. No spam. Just honest advice and competitive rates tailored to your exact situation.</p>
+        <p class="section-sub">No commitment. No spam. Just honest advice and the best rates for your exact situation.</p>
         <div class="qperks">
-          <div class="perk"><div class="perk-ico">&#9889;</div><div><h4>Instant Response</h4><p>Receive your personalized quote within minutes.</p></div></div>
+          <div class="perk"><div class="perk-ico">&#9889;</div><div><h4>Instant Response</h4><p>Receive your quote within minutes of submitting.</p></div></div>
           <div class="perk"><div class="perk-ico">&#128274;</div><div><h4>100% Secure &amp; Private</h4><p>Your data is encrypted and never sold or shared.</p></div></div>
           <div class="perk"><div class="perk-ico">&#127942;</div><div><h4>Best Price Guaranteed</h4><p>We compare top carriers to find you the lowest rate.</p></div></div>
-          <div class="perk"><div class="perk-ico">&#129309;</div><div><h4>Zero Obligation</h4><p>Getting a quote is completely free &mdash; no pressure to buy.</p></div></div>
+          <div class="perk"><div class="perk-ico">&#129309;</div><div><h4>Zero Obligation</h4><p>Getting a quote is completely free &mdash; no pressure.</p></div></div>
         </div>
       </div>
-      <div class="fcard reveal">
+      <div class="reveal"><div class="fcard">
         <h3>Request Your Free Quote</h3>
-        <p class="sub">A licensed Awakening Insurance advisor will contact you shortly.</p>
-        <div class="fg">
-          <div class="field"><label>First Name *</label><input type="text" placeholder="John"></div>
-          <div class="field"><label>Last Name *</label><input type="text" placeholder="Smith"></div>
-          <div class="field"><label>Email *</label><input type="email" placeholder="john@email.com"></div>
-          <div class="field"><label>Phone *</label><input type="tel" placeholder="+1 (000) 000-0000"></div>
-          <div class="field full">
-            <label>Insurance Type *</label>
-            <select>
-              <option value="">Select what you need</option>
-              <option>Personal Vehicle Insurance</option>
-              <option>Commercial Vehicle Insurance</option>
-              <option>Fleet Insurance (5+ vehicles)</option>
-              <option>Truck Insurance</option>
-              <option>Multiple Types</option>
-            </select>
+        <p class="sub">A licensed advisor will contact you shortly.</p>
+        <form action="https://formspree.io/f/xvzvedop" method="POST">
+          <input type="hidden" name="_subject" value="New Quote Request — Awakening Insurance">
+          <input type="hidden" name="_next" value="https://awakeninginsurance.com/services.html#quote">
+          <div class="fg">
+            <div class="field"><label>First Name *</label><input type="text" name="first_name" placeholder="John" required></div>
+            <div class="field"><label>Last Name *</label><input type="text" name="last_name" placeholder="Smith" required></div>
+            <div class="field"><label>Email *</label><input type="email" name="email" placeholder="john@email.com" required></div>
+            <div class="field"><label>Phone *</label><input type="tel" name="phone" placeholder="+1 (000) 000-0000" required></div>
+            <div class="field full"><label>Insurance Type *</label>
+              <select name="insurance_type" required>
+                <option value="">Select coverage needed</option>
+                <option>Personal Vehicle Insurance</option>
+                <option>Commercial Vehicle Insurance</option>
+                <option>Fleet Insurance (5+ vehicles)</option>
+                <option>Truck Insurance</option>
+                <option>Multiple Types</option>
+              </select>
+            </div>
+            <div class="field full"><label>Number of Vehicles</label>
+              <select name="vehicles">
+                <option value="">Select</option>
+                <option>1 Vehicle</option><option>2-4 Vehicles</option>
+                <option>5-10 Vehicles</option><option>11-50 Vehicles</option>
+                <option>51-200 Vehicles</option><option>200+ Vehicles</option>
+              </select>
+            </div>
+            <div class="field full"><label>State</label>
+              <select name="state">
+                <option value="">Select Your State</option>
+                <option>Alabama</option><option>Alaska</option><option>Arizona</option><option>Arkansas</option><option>California</option><option>Colorado</option><option>Connecticut</option><option>Delaware</option><option>Florida</option><option>Georgia</option><option>Hawaii</option><option>Idaho</option><option>Illinois</option><option>Indiana</option><option>Iowa</option><option>Kansas</option><option>Kentucky</option><option>Louisiana</option><option>Maine</option><option>Maryland</option><option>Massachusetts</option><option>Michigan</option><option>Minnesota</option><option>Mississippi</option><option>Missouri</option><option>Montana</option><option>Nebraska</option><option>Nevada</option><option>New Hampshire</option><option>New Jersey</option><option>New Mexico</option><option>New York</option><option>North Carolina</option><option>North Dakota</option><option>Ohio</option><option>Oklahoma</option><option>Oregon</option><option>Pennsylvania</option><option>Rhode Island</option><option>South Carolina</option><option>South Dakota</option><option>Tennessee</option><option>Texas</option><option>Utah</option><option>Vermont</option><option>Virginia</option><option>Washington</option><option>West Virginia</option><option>Wisconsin</option><option>Wyoming</option>
+              </select>
+            </div>
+            <div class="field full"><label>Additional Details</label>
+              <textarea name="message" placeholder="Vehicle types, DOT number, current coverage, budget..."></textarea>
+            </div>
           </div>
-          <div class="field full">
-            <label>Number of Vehicles</label>
-            <select>
-              <option value="">Select</option>
-              <option>1 Vehicle</option>
-              <option>2-4 Vehicles</option>
-              <option>5-10 Vehicles</option>
-              <option>11-50 Vehicles</option>
-              <option>51-200 Vehicles</option>
-              <option>200+ Vehicles</option>
-            </select>
-          </div>
-          <div class="field full">
-            <label>State</label>
-            <select>
-              <option value="">Select Your State</option>
-              <option>Alabama</option><option>Alaska</option><option>Arizona</option>
-              <option>Arkansas</option><option>California</option><option>Colorado</option>
-              <option>Connecticut</option><option>Delaware</option><option>Florida</option>
-              <option>Georgia</option><option>Hawaii</option><option>Idaho</option>
-              <option>Illinois</option><option>Indiana</option><option>Iowa</option>
-              <option>Kansas</option><option>Kentucky</option><option>Louisiana</option>
-              <option>Maine</option><option>Maryland</option><option>Massachusetts</option>
-              <option>Michigan</option><option>Minnesota</option><option>Mississippi</option>
-              <option>Missouri</option><option>Montana</option><option>Nebraska</option>
-              <option>Nevada</option><option>New Hampshire</option><option>New Jersey</option>
-              <option>New Mexico</option><option>New York</option><option>North Carolina</option>
-              <option>North Dakota</option><option>Ohio</option><option>Oklahoma</option>
-              <option>Oregon</option><option>Pennsylvania</option><option>Rhode Island</option>
-              <option>South Carolina</option><option>South Dakota</option><option>Tennessee</option>
-              <option>Texas</option><option>Utah</option><option>Vermont</option>
-              <option>Virginia</option><option>Washington</option><option>West Virginia</option>
-              <option>Wisconsin</option><option>Wyoming</option>
-            </select>
-          </div>
-          <div class="field full">
-            <label>Additional Details</label>
-            <textarea placeholder="Tell us more &mdash; vehicle types, DOT number, current coverage, budget..."></textarea>
-          </div>
-        </div>
-        <button class="btn-primary" style="width:100%;justify-content:center;margin-top:6px;padding:15px;font-size:.95rem;border-radius:10px;" onclick="submitForm(this)">&#128640; Get My Free Quote Now</button>
-        <p class="fnote">&#128274; Your information is 100% secure and confidential. No spam ever.</p>
-      </div>
+          <button type="submit" class="btn-submit" style="margin-top:8px;">&#128640; Get My Free Quote Now</button>
+          <p class="fnote">&#128274; 100% secure &amp; confidential. No spam ever.</p>
+        </form>
+      </div></div>
     </div>
   </div>
 </section>
-
 <footer>
   <div class="container">
     <div class="footer-grid">
@@ -579,15 +416,14 @@ footer{background:var(--navy-dk);padding:68px 0 0;}
         <p class="fdesc">Protecting individuals, families, businesses and fleets nationwide. Trusted, licensed, and always in your corner.</p>
         <div class="fcontact">
           <span>&#128205; 1037 Conrad Ct, Elk Grove Village, IL 60007</span>
-          <span>&#128222; +1 (847) 749-9276</span>
+          <span>&#128222; +1 (224) 366-0344 ext. 800</span>
           <span>&#9993; info@awakeninginsurance.com</span>
         </div>
         <div class="social-row">
           <div class="sbtn">in</div><div class="sbtn">f</div><div class="sbtn">X</div><div class="sbtn">&#9654;</div>
         </div>
       </div>
-      <div class="fcol">
-        <h4>Quick Links</h4>
+      <div class="fcol"><h4>Quick Links</h4>
         <ul class="flinks">
           <li><a href="index.html">Home</a></li>
           <li><a href="services.html">Services</a></li>
@@ -596,8 +432,7 @@ footer{background:var(--navy-dk);padding:68px 0 0;}
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
-      <div class="fcol">
-        <h4>Services</h4>
+      <div class="fcol"><h4>Services</h4>
         <ul class="flinks">
           <li><a href="services.html#personal">Personal Vehicle</a></li>
           <li><a href="services.html#commercial">Commercial Vehicle</a></li>
@@ -606,12 +441,11 @@ footer{background:var(--navy-dk);padding:68px 0 0;}
           <li><a href="services.html#quote">Get a Quote</a></li>
         </ul>
       </div>
-      <div class="fcol">
-        <h4>Contact Us</h4>
+      <div class="fcol"><h4>Contact Us</h4>
         <ul class="flinks">
-          <li><a href="tel:+18477499276">+1 (847) 749-9276</a></li>
-          <li><a href="mailto:info@awakeninginsurance.com">info@awakeninginsurance.com</a></li>
-          <li><a href="https://wa.me/18477499276" target="_blank">WhatsApp Us</a></li>
+          <li><a href="tel:+12243660344">+1 (224) 366-0344 ext. 800</a></li>
+          <li><a href="mailto:info@awakeninginsurance.com">Email Us</a></li>
+          <li><a href="https://wa.me/12243660344" target="_blank">WhatsApp</a></li>
           <li><a href="contact.html">Send a Message</a></li>
         </ul>
       </div>
@@ -620,32 +454,25 @@ footer{background:var(--navy-dk);padding:68px 0 0;}
   <div class="container">
     <div class="fbar">
       <p>&copy; 2024 Awakening Insurance Agency LLC. All rights reserved. Licensed Nationwide.</p>
-      <div class="fbar-links">
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms of Service</a>
-      </div>
+      <div class="fbar-links"><a href="privacy.html">Privacy Policy</a><a href="#">Terms of Service</a></div>
     </div>
   </div>
 </footer>
 <div class="floating-wrap">
-  <a href="https://wa.me/18477499276" target="_blank" rel="noopener" class="fbtn wa"><span>&#128172;</span><span class="flabel">WhatsApp</span></a>
-  <a href="tel:+18477499276" class="fbtn call"><span>&#128222;</span><span class="flabel">Call Now</span></a>
+  <a href="https://wa.me/12243660344" target="_blank" class="fbtn wa"><span>&#128172;</span><span class="flabel">WhatsApp</span></a>
+  <a href="tel:+12243660344" class="fbtn call"><span>&#128222;</span><span class="flabel">Call Now</span></a>
 </div>
-<div id="toast">&#9989; <span id="toastMsg">Submitted!</span></div>
 <script>
-var navbar=document.getElementById("navbar"),prog=document.getElementById("scrollProgress");
-if(prog){window.addEventListener("scroll",function(){navbar.classList.toggle("scrolled",window.scrollY>36);prog.style.width=Math.min((window.scrollY/(document.body.scrollHeight-window.innerHeight))*100,100)+"%";},{passive:true});}
-else{window.addEventListener("scroll",function(){navbar.classList.toggle("scrolled",window.scrollY>36);},{passive:true});}
-var ham=document.getElementById("hamburger"),mob=document.getElementById("mobileMenu");
-if(ham){ham.addEventListener("click",function(){ham.classList.toggle("open");mob.classList.toggle("open");document.body.style.overflow=mob.classList.contains("open")?"hidden":"";});}
-function closeMenu(){if(ham){ham.classList.remove("open");mob.classList.remove("open");document.body.style.overflow="";}}
+var nb=document.getElementById("navbar"),sp=document.getElementById("scrollProgress");
+window.addEventListener("scroll",function(){
+  if(nb)nb.classList.toggle("scrolled",window.scrollY>36);
+  if(sp)sp.style.width=Math.min((window.scrollY/(document.body.scrollHeight-window.innerHeight))*100,100)+"%";
+},{passive:true});
+var hm=document.getElementById("hamburger"),mm=document.getElementById("mobileMenu");
+if(hm){hm.addEventListener("click",function(){hm.classList.toggle("open");mm.classList.toggle("open");document.body.style.overflow=mm.classList.contains("open")?"hidden":"";});}
+function closeMenu(){if(hm){hm.classList.remove("open");mm.classList.remove("open");document.body.style.overflow="";}}
 var obs=new IntersectionObserver(function(entries){entries.forEach(function(e,i){if(e.isIntersecting){setTimeout(function(){e.target.classList.add("visible");},i*65);obs.unobserve(e.target);}});},{threshold:0.08});
 document.querySelectorAll(".reveal").forEach(function(el){obs.observe(el);});
-function showToast(msg){var t=document.getElementById("toast");if(!t)return;document.getElementById("toastMsg").textContent=msg;t.style.opacity="1";t.style.transform="translateX(-50%) translateY(0)";setTimeout(function(){t.style.opacity="0";t.style.transform="translateX(-50%) translateY(100px)";},3500);}
-function submitForm(btn){btn.disabled=true;btn.textContent="Sending...";setTimeout(function(){btn.disabled=false;btn.textContent="Request Sent!";showToast("We received your request and will contact you shortly!");},1000);}
-function submitContact(btn){btn.disabled=true;btn.textContent="Sending...";setTimeout(function(){btn.disabled=false;btn.textContent="Message Sent!";showToast("Message received! We will reply within 2 hours.");},1000);}
-var secs=document.querySelectorAll("section[id]"),navAs=document.querySelectorAll(".nav-links a");
-window.addEventListener("scroll",function(){var cur="";secs.forEach(function(s){if(window.scrollY>=s.offsetTop-130)cur=s.id;});navAs.forEach(function(a){var href=a.getAttribute("href");if(href&&href.startsWith("#")){a.style.color=href==="#"+cur?"var(--amber-lt)":"";}});},{passive:true});
 </script>
 </body>
 </html>
